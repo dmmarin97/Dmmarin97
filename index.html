@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asesoría cercana y soluciones prácticas en seguridad y salud en el trabajo (SST) y gestión humana para empresas que quieren crecer cuidando a su gente.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:title" content="Seguridad y talento para crecer | Asesoría SST y gestión humana">
+  <meta property="og:description" content="Gestión estratégica del SG-SST, auditorías, gestión de riesgos y talento humano en Santiago de Cali, Colombia.">
+  <meta property="og:image" content="hero.jpeg">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap">
+  <title>Seguridad y talento para crecer | Asesoría SST y gestión humana</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --color-ink: #12304a;
+      --color-ink-soft: #536a7b;
+      --color-primary: #ff3366;
+      --color-primary-dark: #df204f;
+      --color-teal: #2ca6a4;
+      --color-page: #ffffff;
+      --color-surface: #f5f8fa;
+      --color-border: #e3ebef;
+      --shadow-card: 0 16px 42px rgba(18, 48, 74, 0.09);
+      --shadow-card-hover: 0 22px 48px rgba(18, 48, 74, 0.15);
+      --radius-card: 20px;
+      --content-width: 1160px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--color-page);
+      color: var(--color-ink);
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--color-teal);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--content-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding-block: 96px;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 46px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 12px;
+      color: var(--color-teal);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .section-heading .eyebrow {
+      justify-content: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--color-ink);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading > p:last-child {
+      margin-bottom: 0;
+      color: var(--color-ink-soft);
+    }
+
+    /* Encabezado y navegación principal */
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(227, 235, 239, 0.88);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 78px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      min-width: 0;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1.25;
+    }
+
+    .brand-copy strong {
+      font-size: 0.94rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-copy span {
+      margin-top: 3px;
+      color: var(--color-ink-soft);
+      font-size: 0.68rem;
+      font-weight: 500;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .main-nav a {
+      color: var(--color-ink-soft);
+      font-size: 0.86rem;
+      font-weight: 500;
+      transition: color 180ms ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: var(--color-primary);
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--color-primary);
+      box-shadow: 0 9px 22px rgba(255, 51, 102, 0.22);
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.3;
+      transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--color-primary-dark);
+      box-shadow: 0 12px 25px rgba(223, 32, 79, 0.28);
+    }
+
+    .button:active,
+    .button.is-pressed {
+      transform: translateY(1px) scale(0.98);
+      background: #bb1740;
+      box-shadow: 0 4px 12px rgba(187, 23, 64, 0.22);
+    }
+
+    .header-cta {
+      min-height: 42px;
+      padding: 10px 17px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    /* Sección hero con imagen de fondo, propuesta de valor y CTA */
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: 610px;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(10, 34, 56, 0.91) 0%, rgba(10, 34, 56, 0.77) 51%, rgba(10, 34, 56, 0.2) 100%),
+        url("trabajo.jpg") center 43% / cover no-repeat;
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -130px;
+      bottom: -245px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(255, 255, 255, 0.19);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding-block: 90px;
+      color: #fff;
+    }
+
+    .hero .eyebrow {
+      color: #63d5c4;
+    }
+
+    .hero h1 {
+      max-width: 680px;
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: clamp(2.65rem, 6vw, 4.65rem);
+      letter-spacing: -0.06em;
+    }
+
+    .hero h1 span {
+      color: #63d5c4;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+      max-width: 570px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 180ms ease;
+    }
+
+    .text-link:hover {
+      color: #63d5c4;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+      letter-spacing: -0.025em;
+    }
+
+    .service-card > p {
+      margin-bottom: 0;
+      color: var(--color-ink-soft);
+      font-size: 0.89rem;
+    }
+
+    /* Servicios profesionales en tarjetas descriptivas */
+    .services-section {
+      background: #fff;
+    }
+
+    .service-card {
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      background: #fff;
+      box-shadow: var(--shadow-card);
+      transition: box-shadow 220ms ease, transform 220ms ease;
+    }
+
+    .service-card > img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .service-card-content {
+      padding: 25px 28px 30px;
+    }
+
+    .service-icon {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      margin-bottom: 23px;
+      place-items: center;
+      border-radius: 17px;
+      background: #e9f7f5;
+      color: var(--color-teal);
+    }
+
+    .service-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .service-card h3 {
+      font-size: 1.24rem;
+    }
+
+    /* Contacto: formulario etiquetado y estado accesible */
+    .contact-section {
+      background: var(--color-surface);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      align-items: center;
+      gap: 72px;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 18px;
+    }
+
+    .contact-copy > p:not(.eyebrow) {
+      color: var(--color-ink-soft);
+    }
+
+    .contact-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 27px;
+      color: var(--color-ink-soft);
+      font-size: 0.86rem;
+    }
+
+    .contact-note svg {
+      flex: 0 0 21px;
+      margin-top: 3px;
+      color: var(--color-teal);
+    }
+
+    .contact-note a {
+      color: var(--color-ink);
+      text-decoration: underline;
+      text-decoration-color: rgba(44, 166, 164, 0.55);
+      text-underline-offset: 3px;
+    }
+
+    .contact-note a:hover {
+      color: var(--color-teal);
+    }
+
+    .map-embed {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 230px;
+      margin-top: 24px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .map-embed iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .contact-form {
+      padding: 34px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      background: #fff;
+      box-shadow: var(--shadow-card);
+    }
+
+    .form-field {
+      margin-bottom: 20px;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--color-ink);
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      border: 1px solid #dce5ea;
+      border-radius: 12px;
+      background: #fff;
+      color: var(--color-ink);
+      font-size: 0.9rem;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .form-field input {
+      min-height: 51px;
+      padding: 12px 15px;
+    }
+
+    .form-field textarea {
+      min-height: 142px;
+      padding: 13px 15px;
+      resize: vertical;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: #90a0aa;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--color-teal);
+      box-shadow: 0 0 0 3px rgba(44, 166, 164, 0.12);
+      outline: none;
+    }
+
+    .contact-form .button {
+      width: 100%;
+      margin-top: 3px;
+    }
+
+    .form-status {
+      min-height: 1.5em;
+      margin: 16px 0 0;
+      color: #176c62;
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    /* Pie de página con derechos reservados y enlaces sociales */
+    .site-footer {
+      padding-block: 30px;
+      background: #102b43;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      font-size: 0.78rem;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 0.78rem;
+      transition: color 180ms ease;
+    }
+
+    .social-links a:hover {
+      color: #63d5c4;
+    }
+
+    /* Botón flotante de regreso al inicio, visible después de desplazarse */
+    .back-to-top {
+      position: fixed;
+      z-index: 9;
+      right: 24px;
+      bottom: 24px;
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--color-primary);
+      box-shadow: 0 8px 22px rgba(18, 48, 74, 0.2);
+      color: #fff;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: background-color 180ms ease, opacity 180ms ease, transform 180ms ease;
+      visibility: hidden;
+    }
+
+    .back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--color-primary-dark);
+    }
+
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .section {
+        padding-block: 78px;
+      }
+
+      .header-inner {
+        gap: 18px;
+      }
+
+      .main-nav {
+        gap: 20px;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-layout {
+        gap: 42px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      html {
+        scroll-padding-top: 120px;
+      }
+
+      .container {
+        width: min(100% - 36px, var(--content-width));
+      }
+
+      .section {
+        padding-block: 64px;
+      }
+
+      .header-inner {
+        min-height: 70px;
+        flex-wrap: wrap;
+        gap: 0 14px;
+        padding-block: 8px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 45px;
+        height: 42px;
+      }
+
+      .brand-copy strong {
+        font-size: 0.8rem;
+      }
+
+      .brand-copy span {
+        font-size: 0.61rem;
+      }
+
+      .header-cta {
+        min-height: 38px;
+        padding: 9px 12px;
+        font-size: 0.73rem;
+      }
+
+      .main-nav {
+        width: 100%;
+        justify-content: space-between;
+        order: 1;
+        gap: 10px;
+        padding: 6px 0 4px;
+      }
+
+      .main-nav a {
+        font-size: 0.73rem;
+      }
+
+      .hero {
+        min-height: 570px;
+        background-position: 58% center;
+      }
+
+      .hero-content {
+        padding-block: 75px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.45rem, 11vw, 3.35rem);
+      }
+
+      .hero-content > p:not(.eyebrow) {
+        font-size: 0.96rem;
+      }
+
+      .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .service-card {
+        width: 100%;
+      }
+
+      .service-card-content {
+        padding: 23px 23px 27px;
+      }
+
+      .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+      }
+
+      .contact-form {
+        padding: 25px 21px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .social-links {
+        gap: 17px;
+      }
+
+      .back-to-top {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado con logo y navegación por las secciones principales -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Inicio — asesoría en SST y gestión humana">
+        <img src="logo.png" alt="Logo de asesoría en seguridad y talento">
+        <span class="brand-copy">
+          <strong>Seguridad &amp; Talento</strong>
+          <span>Asesoría SST y gestión humana</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio" aria-current="page">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button header-cta" href="#contacto">Hablemos de tu empresa <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero con imagen de fondo, presentación y llamado a la acción -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Gestión estratégica para empresas más seguras y sostenibles</p>
+          <h1 id="hero-title">Cuidamos a tu equipo. <span>Impulsamos tu empresa.</span></h1>
+          <p>Asesoría cercana y soluciones efectivas en seguridad y salud en el trabajo y gestión humana, pensadas para las necesidades reales de tu organización.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contacto">Conversemos sobre tu empresa <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#servicios">Conoce nuestros servicios <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios destacados presentados en tres tarjetas descriptivas -->
+    <section class="section services-section" id="servicios" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Servicios especializados</p>
+          <h2 id="services-title">Experiencia que se convierte en soluciones</h2>
+          <p>Un enfoque sencillo y colaborativo para que cada iniciativa responda a las personas y objetivos de tu empresa.</p>
+        </div>
+        <div class="card-grid">
+          <article class="service-card">
+            <img src="asesoria.jpg" alt="Asesoría en seguridad y salud en el trabajo con profesionales y personal de planta" loading="lazy" decoding="async">
+            <div class="service-card-content">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-3Z"></path>
+                  <path d="m8.5 12 2.2 2.2 4.8-5"></path>
+                </svg>
+              </span>
+              <h3>Gestión estratégica del SG-SST y cumplimiento legal</h3>
+              <p>Diseñamos e implementamos estrategias para fortalecer el SG-SST y acompañar el cumplimiento de los requisitos legales aplicables.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="verificacion.jpg" alt="Inspección de condiciones de seguridad y riesgos en una planta industrial" loading="lazy" decoding="async">
+            <div class="service-card-content">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="8" r="3"></circle>
+                  <path d="M3.5 19v-1.5A4.5 4.5 0 0 1 8 13h2a4.5 4.5 0 0 1 4.5 4.5V19"></path>
+                  <path d="M16 5.5a3 3 0 0 1 0 5.8M17 13.5a4.5 4.5 0 0 1 3.5 4.4V19"></path>
+                </svg>
+              </span>
+              <h3>Auditorías, gestión de riesgos y mejora continua</h3>
+              <p>Identificamos oportunidades, evaluamos riesgos y promovemos acciones de mejora para avanzar hacia entornos de trabajo más seguros.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="gestion.jpg" alt="Concepto de gestión humana y desarrollo del talento en una organización" loading="lazy" decoding="async">
+            <div class="service-card-content">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19V5m0 14h17"></path>
+                  <path d="m7 15 4-4 3 2 6-7"></path>
+                  <path d="M16 6h4v4"></path>
+                </svg>
+              </span>
+              <h3>Talento Humano, gestión del cambio y cultura preventiva</h3>
+              <p>Impulsamos el desarrollo de las personas y acompañamos el cambio para consolidar equipos comprometidos con una cultura de prevención.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto con formulario accesible y campos validados -->
+    <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow">Hablemos</p>
+          <h2 id="contact-title">Tu próximo paso empieza con una conversación</h2>
+          <p>Cuéntanos qué necesita tu empresa. Te ayudaremos a encontrar una solución práctica para el bienestar de tu equipo.</p>
+          <div class="contact-note">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="2.5"></circle>
+            </svg>
+            <span>Prestamos nuestros servicios en <a href="https://www.google.com/maps/search/?api=1&amp;query=Santiago%20de%20Cali%2C%20Valle%20del%20Cauca%2C%20Colombia" target="_blank" rel="noopener noreferrer">Santiago de Cali, Valle del Cauca, Colombia</a>.</span>
+          </div>
+          <div class="map-embed">
+            <iframe
+              src="https://maps.google.com/maps?q=Santiago%20de%20Cali%2C%20Valle%20del%20Cauca%2C%20Colombia&amp;output=embed"
+              title="Mapa de Santiago de Cali, Valle del Cauca, Colombia"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="contact-note">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 8v4l2.5 1.5"></path>
+            </svg>
+            <span>Déjanos tus datos y te contactaremos para conocer mejor tu reto.</span>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-field">
+            <label for="name">Nombre <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Escribe tu nombre completo" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Correo electrónico <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="tunombre@empresa.com" required>
+          </div>
+          <div class="form-field">
+            <label for="message">Mensaje <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" placeholder="Cuéntanos brevemente cómo podemos ayudarte" required></textarea>
+          </div>
+          <button class="button" type="submit">Enviar mensaje <span aria-hidden="true">→</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con derechos reservados y enlaces a redes sociales -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="current-year">2026</span> Seguridad &amp; Talento. Todos los derechos reservados.</p>
+      <nav class="social-links" aria-label="Redes sociales">
+        <a href="https://www.linkedin.com/in/dayana-melissa-mar%C3%ADn-torres-468017221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (se abre en una pestaña nueva)">LinkedIn</a>
+        <a href="https://wa.me/573127438250" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp (se abre en una pestaña nueva)">WhatsApp</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Botón flotante que permite volver al inicio después de desplazarse -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver arriba" aria-hidden="true" tabindex="-1">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m6 14 6-6 6 6"></path>
+    </svg>
+  </button>
+
+  <script>
+    // El estado de envío se anuncia con un mensaje accesible; para entregar correos hace falta integrar un servicio de formulario.
+    const contactForm = document.querySelector("#contact-form");
+    const formStatus = document.querySelector("#form-status");
+    const backToTop = document.querySelector("#back-to-top");
+    const currentYear = document.querySelector("#current-year");
+
+    currentYear.textContent = new Date().getFullYear();
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formStatus.textContent = "";
+
+      const nameField = contactForm.elements.namedItem("name");
+      const trimmedName = nameField.value.trim();
+      nameField.setCustomValidity(trimmedName ? "" : "Escribe tu nombre para continuar.");
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      formStatus.textContent = `¡Gracias, ${trimmedName}! El formulario se validó correctamente. Para recibir mensajes, conecta un servicio de envío.`;
+      contactForm.reset();
+      nameField.setCustomValidity("");
+    });
+
+    contactForm.elements.namedItem("name").addEventListener("input", (event) => {
+      event.currentTarget.setCustomValidity("");
+    });
+
+    // Alterna el botón flotante según la posición de desplazamiento de la página.
+    const updateBackToTopVisibility = () => {
+      const isVisible = window.scrollY > 360;
+      backToTop.classList.toggle("is-visible", isVisible);
+      backToTop.setAttribute("aria-hidden", String(!isVisible));
+      backToTop.tabIndex = isVisible ? 0 : -1;
+    };
+
+    window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
+    updateBackToTopVisibility();
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Mantiene un cambio perceptible al pulsar los botones principales.
+    document.querySelectorAll(".button, .back-to-top").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.add("is-pressed");
+        window.setTimeout(() => button.classList.remove("is-pressed"), 220);
+      });
+    });
+  </script>
+</body>
+</html>
